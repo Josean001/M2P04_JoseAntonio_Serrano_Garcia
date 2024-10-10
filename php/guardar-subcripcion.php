@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $correo = htmlspecialchars(trim($_POST['email']));
 
     // Creamos el contenido que vamos a guardar
-    $contenido = "El usuario del Correo: $correo se ha suscrito";
+    $contenido = "El usuario con $correo se ha suscrito.\n";
 
     // Guardamos la información en un archivo
     $archivo = 'suscripciones.txt'; // Nombre del archivo donde se guardará la información
@@ -18,14 +18,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($file) {
         fwrite($file, $contenido); // Escribimos el contenido en el archivo
         fclose($file); // Cerramos el archivo
-        echo "Mensaje guardado con éxito.";
+        echo "Gracias por suscribirte.";
     } else {
-        echo "Ocurrió un error al abrir el archivo.";
+        echo "Por favor, introduce un correo electrónico válido.";
     }
 } else {
     // Si no se envió el formulario, redirigimos al usuario
-    header("Location: index.html"); // Cambia esto a la página del formulario
+    header("../html/index.html"); // Cambia esto a la página del formulario
     exit;
 }
+
+
 ?>
+
+
+
 
