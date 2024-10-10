@@ -230,6 +230,11 @@ section p{
     background-color: #ffffff;
 }
 
+.contact-info a{
+    text-decoration: double;
+    color: #333;
+}
+
 
 /* Footer */
 footer {
