@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 } else {
     // Si no se envió el formulario, redirigimos al usuario
-    header("../html/index.html"); // Cambia esto a la página del formulario
+    header("./index.html"); // Cambia esto a la página del formulario
     exit;
 }
 ?>
